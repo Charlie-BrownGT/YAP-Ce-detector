@@ -62,29 +62,18 @@ void PhysListEmStandard::ConstructProcess()
   // Add standard EM Processes
   auto particleIterator=GetParticleIterator();
   particleIterator->reset();
+  
   while( (*particleIterator)() ){
     G4ParticleDefinition* particle = particleIterator->value();
     G4String particleName = particle->GetParticleName();
 
-    if( particleName == "GenericIon" ) {
-
-      ph->RegisterProcess(new G4hMultipleScattering(), particle);          
-      G4ionIonisation* ionIoni = new G4ionIonisation();
-      ionIoni->SetEmModel(new G4IonParametrisedLossModel());
-      ph->RegisterProcess(ionIoni, particle);
-      ph->RegisterProcess(new G4NuclearStopping(), particle);                   
-      
-    } else if( particleName == "ion" ) {
-      
       ph->RegisterProcess(new G4hMultipleScattering(), particle);          
       G4ionIonisation* ionIoni = new G4ionIonisation();
       ionIoni->SetEmModel(new G4IonParametrisedLossModel());
       ph->RegisterProcess(ionIoni, particle);
       ph->RegisterProcess(new G4NuclearStopping(), particle); 
-    }
   }
   // Deexcitation
-  //
   G4VAtomDeexcitation* de = new G4UAtomicDeexcitation();
   G4LossTableManager::Instance()->SetAtomDeexcitation(de);
 }
