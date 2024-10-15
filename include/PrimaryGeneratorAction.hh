@@ -27,5 +27,7 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     DetectorConstruction*      fDetector     = nullptr;
     G4double                   fRndmBeam     = 0.;
     PrimaryGeneratorMessenger* fGunMessenger = nullptr;
+
+    //G4GeneralParticleSource* particleGun;
 };
 #endif
