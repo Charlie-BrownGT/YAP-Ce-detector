@@ -132,9 +132,16 @@ void PhysListEmStandard::ConstructProcess()
       //all others charged particles except geantino
       ph->RegisterProcess(new G4hMultipleScattering(), particle);
       ph->RegisterProcess(new G4hIonisation(), particle);
+
+    } else if( particleName == "ion" ) {
+
+      ph->RegisterProcess(new G4hMultipleScattering(), particle);          
+      G4ionIonisation* ionIoni = new G4ionIonisation();
+      ionIoni->SetEmModel(new G4IonParametrisedLossModel());
+      ph->RegisterProcess(ionIoni, particle);
+      ph->RegisterProcess(new G4NuclearStopping(), particle); 
     }
   }
-
   // Deexcitation
   //
   G4VAtomDeexcitation* de = new G4UAtomicDeexcitation();

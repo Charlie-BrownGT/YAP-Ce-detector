@@ -34,12 +34,19 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction()
 
 void PrimaryGeneratorAction::SetDefaultKinematic(G4int front)
 {   
+   G4ParticleDefinition* ion 
+           = G4IonTable::GetIonTable()->GetIon(2, 4, 0.);
+
+   //G4IonTable* ionTable = G4IonTable::GetIonTable();
+   //G4ParticleDefinition* ion = ionTable->GetIon(11, 21, 0.0);
+
    G4ParticleDefinition* particle
            = G4ParticleTable::GetParticleTable()->FindParticle("e-");
-  fParticleGun->SetParticleDefinition(particle);
+
+  fParticleGun->SetParticleDefinition(ion);
   fParticleGun->SetParticleCharge(11.0);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
-  fParticleGun->SetParticleEnergy(100*MeV);
+  fParticleGun->SetParticleEnergy(100.*GeV);
   G4double position = 0.*cm;
   if (front) position = -0.4999*(fDetector->GetSize());
   fParticleGun->SetParticlePosition(G4ThreeVector(position,0.*cm,0.*cm));
