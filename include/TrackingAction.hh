@@ -5,8 +5,6 @@
 
 class PrimaryGeneratorAction;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class TrackingAction : public G4UserTrackingAction {
 
   public:  
@@ -19,7 +17,4 @@ class TrackingAction : public G4UserTrackingAction {
   private:
     PrimaryGeneratorAction* fPrimary = nullptr;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif

@@ -3,17 +3,13 @@
 
 #include "G4Track.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 G4ClassificationOfNewTrack
 StackingAction::ClassifyNewTrack(const G4Track* track)
 {  
   //keep primary particle
   if (track->GetParentID() == 0) return fUrgent;
 
-  //
   //energy spectrum of secondaries
-  //
   G4double energy = track->GetKineticEnergy();
   G4double charge = track->GetDefinition()->GetPDGCharge();
 
@@ -23,5 +19,3 @@ StackingAction::ClassifyNewTrack(const G4Track* track)
   else              analysisManager->FillH1(6,energy);   
   return fUrgent;
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

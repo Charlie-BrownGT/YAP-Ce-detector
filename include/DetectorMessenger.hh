@@ -10,8 +10,6 @@ class G4UIcmdWithAString;
 class G4UIcmdWithADoubleAndUnit;
 class G4UIcmdWithoutParameter;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class DetectorMessenger: public G4UImessenger
 {
   public:
@@ -30,8 +28,5 @@ class DetectorMessenger: public G4UImessenger
     G4UIcmdWithAString*        fMaterCmd  = nullptr;
     G4UIcmdWithADoubleAndUnit* fSizeCmd   = nullptr;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
 

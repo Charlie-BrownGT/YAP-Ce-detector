@@ -8,20 +8,15 @@
 
 #include <iomanip>
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 Run::Run(const DetectorConstruction* det)
 : fDetector(det)
 { }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void Run::SetPrimary(const G4ParticleDefinition* particle, G4double energy)
 { 
   fParticle = particle;
   fEkin = energy;
 }
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void Run::CountProcesses(const G4String& procName) 
 {
@@ -33,8 +28,6 @@ void Run::CountProcesses(const G4String& procName)
     fProcCounter[procName]++; 
   }
 }
- 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void Run::Merge(const G4Run* run)
 {
@@ -45,7 +38,6 @@ void Run::Merge(const G4Run* run)
   fEkin     = localRun->fEkin;
 
   // accumulate sums
-  //
   fNbOfTraks0 += localRun->fNbOfTraks0;  
   fNbOfTraks1 += localRun->fNbOfTraks1;  
   fNbOfSteps0 += localRun->fNbOfSteps0;
@@ -77,15 +69,12 @@ void Run::Merge(const G4Run* run)
   G4Run::Merge(run); 
 } 
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 void Run::EndOfRun()
 {
   G4int prec = 5, wid = prec + 2;  
   G4int dfprec = G4cout.precision(prec);
   
-  //run condition
-  //        
+  //run condition   
   G4String partName    = fParticle->GetParticleName();    
   const G4Material* material = fDetector->GetMaterial();
   G4double density     = material->GetDensity();
@@ -105,8 +94,7 @@ void Run::EndOfRun()
   G4cout << " NIEL energy calculated: " 
          << G4BestUnit(fNIEL/dNbOfEvents, "Energy") << G4endl;
                
-  //nb of tracks and steps per event
-  //           
+  //nb of tracks and steps per event       
   G4cout << "\n Nb tracks/event"
          << "   neutral: " << std::setw(wid) << fNbOfTraks0/dNbOfEvents
          << "   charged: " << std::setw(wid) << fNbOfTraks1/dNbOfEvents
@@ -116,7 +104,6 @@ void Run::EndOfRun()
          << G4endl;
         
   //frequency of processes
-  //
   G4cout << "\n Process calls frequency :" << G4endl;
   G4int index = 0;  
   std::map<G4String,G4int>::iterator it;         
@@ -130,7 +117,6 @@ void Run::EndOfRun()
   G4cout << G4endl;
         
   //compute true and projected ranges, and transverse dispersion
-  //
   fTrueRange /= numberOfEvent; fTrueRange2 /= numberOfEvent;
   G4double trueRms = fTrueRange2 - fTrueRange*fTrueRange;        
   if (trueRms>0.) trueRms = std::sqrt(trueRms); else trueRms = 0.;
@@ -144,7 +130,6 @@ void Run::EndOfRun()
   if (trvsRms>0.) trvsRms = std::sqrt(trvsRms); else trvsRms = 0.;
    
   //compare true range with csda range from PhysicsTables
-  //  
   G4EmCalculator emCalculator;
   G4double rangeTable = 0.;
   if (fParticle->GetPDGCharge() != 0.)
@@ -176,5 +161,3 @@ void Run::EndOfRun()
   //restore default format         
   G4cout.precision(dfprec);  
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

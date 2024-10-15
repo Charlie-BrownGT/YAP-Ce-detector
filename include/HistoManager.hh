@@ -5,8 +5,6 @@
 
 #include "G4AnalysisManager.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class HistoManager
 {
   public:
@@ -19,7 +17,4 @@ class HistoManager
     G4String fFileName = "testem1";
 };
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-

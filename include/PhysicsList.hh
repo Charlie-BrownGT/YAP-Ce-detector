@@ -9,8 +9,6 @@ class PhysicsListMessenger;
 class G4VPhysicsConstructor;
 class G4VProcess;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class PhysicsList: public G4VModularPhysicsList
 {
   public:
@@ -35,7 +33,4 @@ class PhysicsList: public G4VModularPhysicsList
     PhysicsListMessenger*  fMessenger = nullptr;
 };
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-

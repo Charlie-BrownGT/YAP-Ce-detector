@@ -8,8 +8,6 @@
 
 class StepMaxMessenger;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class StepMax : public G4VDiscreteProcess
 {
   public:
@@ -37,8 +35,4 @@ class StepMax : public G4VDiscreteProcess
      
    StepMaxMessenger* fMess = nullptr;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-

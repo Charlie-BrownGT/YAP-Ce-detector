@@ -4,8 +4,6 @@
 #include "G4UserStackingAction.hh"
 #include "globals.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class StackingAction : public G4UserStackingAction
 {
   public:
@@ -15,8 +13,4 @@ class StackingAction : public G4UserStackingAction
     G4ClassificationOfNewTrack ClassifyNewTrack(const G4Track*) override;
     
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-

@@ -5,8 +5,6 @@
 #include "G4UIcmdWithADoubleAndUnit.hh"
 #include "G4UIcmdWithAString.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 PhysicsListMessenger::PhysicsListMessenger(PhysicsList* pPhys)
 : fPhysicsList(pPhys)
 { 
@@ -26,16 +24,12 @@ PhysicsListMessenger::PhysicsListMessenger(PhysicsList* pPhys)
   fListCmd->AvailableForStates(G4State_PreInit);  
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 PhysicsListMessenger::~PhysicsListMessenger()
 {
   delete fRCmd;
   delete fListCmd;
   delete fPhysDir;
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PhysicsListMessenger::SetNewValue(G4UIcommand* command,
                                           G4String newValue)
@@ -46,5 +40,3 @@ void PhysicsListMessenger::SetNewValue(G4UIcommand* command,
   if( command == fListCmd )
    { fPhysicsList->AddPhysicsList(newValue);}
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

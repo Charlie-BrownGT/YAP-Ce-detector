@@ -47,8 +47,6 @@
 #include "G4Proton.hh"
 #include "G4GenericIon.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 PhysicsList::PhysicsList(DetectorConstruction* det) 
   : fDet(det)
 {
@@ -63,14 +61,10 @@ PhysicsList::PhysicsList(DetectorConstruction* det)
   SetDefaultCutValue(1*mm);
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 PhysicsList::~PhysicsList()
 {
   delete fMessenger;
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PhysicsList::ConstructParticle()
 {
@@ -93,28 +87,16 @@ void PhysicsList::ConstructParticle()
     pShortLivedConstructor.ConstructParticle();  
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 void PhysicsList::ConstructProcess()
 {
-  // Transportation
-  //
   AddTransportation();
 
-  // Electromagnetic physics list
-  //
   fEmPhysicsList->ConstructProcess();
-    
-  // Decay Process
-  //
+  
   AddDecay();
-    
-  // Decay Process
-  //
   AddRadioactiveDecay();  
 
   // step limitation (as a full process)
-  //  
   AddStepMax();
   
   // example of Get process
@@ -123,8 +105,6 @@ void PhysicsList::ConstructProcess()
     G4cout << "\n  GetProcess : " << process->GetProcessName() << G4endl;
   }
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PhysicsList::AddPhysicsList(const G4String& name)
 {
@@ -202,19 +182,15 @@ void PhysicsList::AddPhysicsList(const G4String& name)
   }
   
   // Em options
-  //
   G4EmParameters::Instance()->SetBuildCSDARange(true);        
   G4EmParameters::Instance()->SetGeneralProcessActive(false);
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PhysicsList::AddDecay()
 {
   G4PhysicsListHelper* ph = G4PhysicsListHelper::GetPhysicsListHelper();
     
   // Decay Process
-  //
   G4Decay* fDecayProcess = new G4Decay();
 
   auto particleIterator=GetParticleIterator();
@@ -225,8 +201,6 @@ void PhysicsList::AddDecay()
       ph->RegisterProcess(fDecayProcess, particle);    
   }
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PhysicsList::AddRadioactiveDecay()
 {  
@@ -245,12 +219,9 @@ void PhysicsList::AddRadioactiveDecay()
   ph->RegisterProcess(radioactiveDecay, G4GenericIon::GenericIon());
   
   // mandatory for G4NuclideTable
-  //
   const G4double meanLife = 1*picosecond, halfLife = meanLife*std::log(2);
   G4NuclideTable::GetInstance()->SetThresholdOfHalfLife(halfLife);
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PhysicsList::AddStepMax()
 {
@@ -268,8 +239,6 @@ void PhysicsList::AddStepMax()
   }
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 void PhysicsList::GetRange(G4double val)
 {
   G4LogicalVolume* lBox = fDet->GetWorld()->GetLogicalVolume();
@@ -286,8 +255,6 @@ void PhysicsList::GetRange(G4double val)
   G4cout << "range    : " << G4BestUnit(cut,"Length") << G4endl;
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 G4VProcess* PhysicsList::GetProcess(const G4String& processName) const
 {
   G4ParticleDefinition* particle = G4GenericIon::GenericIon();
@@ -299,5 +266,3 @@ G4VProcess* PhysicsList::GetProcess(const G4String& processName) const
   }
   return nullptr;
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

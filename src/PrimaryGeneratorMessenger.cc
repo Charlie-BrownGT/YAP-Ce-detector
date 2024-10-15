@@ -4,8 +4,6 @@
 #include "G4UIcmdWithAnInteger.hh"
 #include "G4UIcmdWithADouble.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 PrimaryGeneratorMessenger::PrimaryGeneratorMessenger(
                                              PrimaryGeneratorAction* Gun)
  :fAction(Gun)
@@ -28,16 +26,12 @@ PrimaryGeneratorMessenger::PrimaryGeneratorMessenger(
   fRndmCmd->AvailableForStates(G4State_Idle);  
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 PrimaryGeneratorMessenger::~PrimaryGeneratorMessenger()
 {
   delete fDefaultCmd;
   delete fRndmCmd;
   delete fGunDir;
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PrimaryGeneratorMessenger::SetNewValue(G4UIcommand* command,
                                                G4String newValue)
@@ -48,6 +42,3 @@ void PrimaryGeneratorMessenger::SetNewValue(G4UIcommand* command,
   if (command == fRndmCmd)
    {fAction->SetRndmBeam(fRndmCmd->GetNewDoubleValue(newValue));}   
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-

@@ -7,8 +7,6 @@
 class StepMax;
 class G4UIcmdWithADoubleAndUnit;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class StepMaxMessenger: public G4UImessenger
 {
   public:
@@ -21,7 +19,4 @@ class StepMaxMessenger: public G4UImessenger
     StepMax* fStepMax = nullptr;
     G4UIcmdWithADoubleAndUnit* fStepMaxCmd = nullptr;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif

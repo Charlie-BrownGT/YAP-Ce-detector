@@ -10,8 +10,6 @@
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 PrimaryGeneratorAction::PrimaryGeneratorAction( DetectorConstruction* det)
  :fDetector(det)
 {
@@ -22,29 +20,22 @@ PrimaryGeneratorAction::PrimaryGeneratorAction( DetectorConstruction* det)
   fGunMessenger = new PrimaryGeneratorMessenger(this);  
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 PrimaryGeneratorAction::~PrimaryGeneratorAction()
 {
   delete fParticleGun;
   delete fGunMessenger;  
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 void PrimaryGeneratorAction::SetDefaultKinematic(G4int front)
 {   
    G4ParticleDefinition* ion 
            = G4IonTable::GetIonTable()->GetIon(2, 4, 0.);
 
-   //G4IonTable* ionTable = G4IonTable::GetIonTable();
-   //G4ParticleDefinition* ion = ionTable->GetIon(11, 21, 0.0);
-
-   G4ParticleDefinition* particle
-           = G4ParticleTable::GetParticleTable()->FindParticle("e-");
+   //G4ParticleDefinition* ion 
+   //        = G4IonTable::GetIonTable()->GetIon(11, 13, 0.);
 
   fParticleGun->SetParticleDefinition(ion);
-  fParticleGun->SetParticleCharge(11.0);
+  fParticleGun->SetParticleCharge(2.0);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
   fParticleGun->SetParticleEnergy(100.*GeV);
   G4double position = 0.*cm;
@@ -52,12 +43,9 @@ void PrimaryGeneratorAction::SetDefaultKinematic(G4int front)
   fParticleGun->SetParticlePosition(G4ThreeVector(position,0.*cm,0.*cm));
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
   //this function is called at the begining of event
-  //
   //randomize the beam, if requested.
   if (fRndmBeam > 0.) 
     {
@@ -72,6 +60,3 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
     }
   else  fParticleGun->GeneratePrimaryVertex(anEvent); 
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-

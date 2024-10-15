@@ -9,8 +9,6 @@ class G4UIdirectory;
 class G4UIcmdWithAnInteger;
 class G4UIcmdWithADouble;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class PrimaryGeneratorMessenger: public G4UImessenger
 {
   public:
@@ -27,7 +25,4 @@ class PrimaryGeneratorMessenger: public G4UImessenger
     G4UIcmdWithADouble*     fRndmCmd    = nullptr;
 };
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-

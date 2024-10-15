@@ -6,8 +6,6 @@
 #include "G4UIcmdWithADoubleAndUnit.hh"
 #include "G4UIcmdWithoutParameter.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 DetectorMessenger::DetectorMessenger(DetectorConstruction * Det)
  : fDetector(Det)
 { 
@@ -32,8 +30,6 @@ DetectorMessenger::DetectorMessenger(DetectorConstruction * Det)
   fSizeCmd->SetToBeBroadcasted(false);
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 DetectorMessenger::~DetectorMessenger()
 {
   delete fMaterCmd;
@@ -41,8 +37,6 @@ DetectorMessenger::~DetectorMessenger()
   delete fDetDir;
   delete fTestemDir;
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void DetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
 { 
@@ -53,5 +47,3 @@ void DetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
    { fDetector->SetSize(fSizeCmd->GetNewDoubleValue(newValue));}
    
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

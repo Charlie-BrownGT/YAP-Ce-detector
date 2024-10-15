@@ -9,8 +9,6 @@ class G4UIdirectory;
 class G4UIcmdWithADoubleAndUnit;
 class G4UIcmdWithAString;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class PhysicsListMessenger: public G4UImessenger
 {
   public:
@@ -29,8 +27,4 @@ class PhysicsListMessenger: public G4UImessenger
     G4UIcmdWithAString*        fListCmd     = nullptr;
     
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-

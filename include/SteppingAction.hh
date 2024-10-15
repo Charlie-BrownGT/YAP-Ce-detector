@@ -6,8 +6,6 @@
 class EventAction;
 class G4NIELCalculator;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class SteppingAction : public G4UserSteppingAction
 {
   public:
@@ -20,7 +18,4 @@ class SteppingAction : public G4UserSteppingAction
     EventAction* fEventAction         = nullptr;
     G4NIELCalculator* fNIELCalculator = nullptr;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif

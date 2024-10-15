@@ -8,8 +8,6 @@
 class DetectorConstruction;
 class G4ParticleDefinition;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class Run : public G4Run
 {
   public:
@@ -47,8 +45,6 @@ class Run : public G4Run
 
     std::map<G4String,G4int>    fProcCounter;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif
 

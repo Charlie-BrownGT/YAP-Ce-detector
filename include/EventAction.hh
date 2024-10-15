@@ -4,8 +4,6 @@
 #include "G4UserEventAction.hh"
 #include "globals.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class EventAction : public G4UserEventAction
 {
   public:
@@ -24,8 +22,4 @@ class EventAction : public G4UserEventAction
     G4double fNIEL = 0.;
 };
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-
-    

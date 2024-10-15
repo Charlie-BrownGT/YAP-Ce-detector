@@ -4,8 +4,6 @@
 #include "G4VPhysicsConstructor.hh"
 #include "globals.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class PhysListEmStandard : public G4VPhysicsConstructor
 {
   public: 
@@ -21,8 +19,4 @@ class PhysListEmStandard : public G4VPhysicsConstructor
     // registered to the process manager of each particle type 
     void ConstructProcess() override;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-

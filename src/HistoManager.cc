@@ -1,14 +1,10 @@
 #include "HistoManager.hh"
 #include "G4UnitsTable.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 HistoManager::HistoManager()
 {
   Book();
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void HistoManager::Book()
 {
@@ -46,5 +42,3 @@ void HistoManager::Book()
     analysisManager->SetH1Activation(ih, false);
   }
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

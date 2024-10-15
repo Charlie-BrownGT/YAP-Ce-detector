@@ -4,14 +4,10 @@
 #include "G4UserRunAction.hh"
 #include "globals.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class Run;
 class DetectorConstruction;
 class PrimaryGeneratorAction;
 class HistoManager;
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 class RunAction : public G4UserRunAction
 {
@@ -30,8 +26,4 @@ class RunAction : public G4UserRunAction
     Run* fRun                             = nullptr;
     HistoManager* fHistoManager           = nullptr;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 #endif
-

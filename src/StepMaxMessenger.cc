@@ -3,8 +3,6 @@
 #include "StepMax.hh"
 #include "G4UIcmdWithADoubleAndUnit.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 StepMaxMessenger::StepMaxMessenger(StepMax* stepM)
 :fStepMax(stepM)
 { 
@@ -15,19 +13,13 @@ StepMaxMessenger::StepMaxMessenger(StepMax* stepM)
   fStepMaxCmd->SetUnitCategory("Length");
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 StepMaxMessenger::~StepMaxMessenger()
 {
   delete fStepMaxCmd;
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void StepMaxMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
 { 
   if (command == fStepMaxCmd)
     { fStepMax->SetMaxStep(fStepMaxCmd->GetNewDoubleValue(newValue));}
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -11,8 +11,6 @@ class DetectorMessenger;
 class G4GlobalMagFieldMessenger;
 class G4Box;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class DetectorConstruction : public G4VUserDetectorConstruction
 {
   public:
@@ -45,8 +43,6 @@ class DetectorConstruction : public G4VUserDetectorConstruction
     DetectorMessenger* fDetectorMessenger = nullptr;
     G4Cache<G4GlobalMagFieldMessenger*> fFieldMessenger = nullptr;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif
 
