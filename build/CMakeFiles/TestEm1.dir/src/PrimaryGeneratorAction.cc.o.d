@@ -297,6 +297,9 @@ CMakeFiles/TestEm1.dir/src/PrimaryGeneratorAction.cc.o: \
  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4ParticleTable.hh \
  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4ParticleTableIterator.hh \
  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4ParticleTable.icc \
+ /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4IonTable.hh \
+ /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4Ions.hh \
+ /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4ParticleTable.hh \
  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4ParticleDefinition.hh \
  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4SystemOfUnits.hh \
  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/Randomize.hh \

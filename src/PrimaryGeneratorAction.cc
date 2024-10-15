@@ -5,6 +5,7 @@
 
 #include "G4Event.hh"
 #include "G4ParticleTable.hh"
+#include "G4IonTable.hh"
 #include "G4ParticleDefinition.hh"
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
@@ -32,10 +33,11 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PrimaryGeneratorAction::SetDefaultKinematic(G4int front)
-{
-  G4ParticleDefinition* particle
+{   
+   G4ParticleDefinition* particle
            = G4ParticleTable::GetParticleTable()->FindParticle("e-");
   fParticleGun->SetParticleDefinition(particle);
+  fParticleGun->SetParticleCharge(11.0);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
   fParticleGun->SetParticleEnergy(100*MeV);
   G4double position = 0.*cm;
