@@ -5050,7 +5050,12 @@ CMakeFiles/TestEm1.dir/src/PrimaryGeneratorAction.cc.o: ../src/PrimaryGeneratorA
   /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/CLHEP/Random/RandPoisson.icc \
   /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
   /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/CLHEP/Random/RandStudentT.h \
-  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/CLHEP/Random/RandStudentT.icc
+  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
+  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4BosonConstructor.hh \
+  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4LeptonConstructor.hh \
+  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4MesonConstructor.hh \
+  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4BaryonConstructor.hh \
+  /home/guy/software/geant4/geant4-v11.2.2-gdml-mt-install/include/Geant4/G4IonConstructor.hh
 
 CMakeFiles/TestEm1.dir/src/PrimaryGeneratorMessenger.cc.o: ../src/PrimaryGeneratorMessenger.cc \
   /usr/include/stdc-predef.h \

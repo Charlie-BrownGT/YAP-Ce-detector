@@ -10,10 +10,17 @@
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
 
+#include "G4BosonConstructor.hh"
+#include "G4LeptonConstructor.hh"
+#include "G4MesonConstructor.hh"
+#include "G4BosonConstructor.hh"
+#include "G4BaryonConstructor.hh"
+#include "G4IonConstructor.hh"
+
 PrimaryGeneratorAction::PrimaryGeneratorAction( DetectorConstruction* det)
  :fDetector(det)
 {
-  //particleGun = new G4GeneralParticleSource();
+  //fparticleGun = new G4GeneralParticleSource();
   
   fParticleGun  = new G4ParticleGun(1);
   SetDefaultKinematic(1);
@@ -24,7 +31,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction( DetectorConstruction* det)
 
 PrimaryGeneratorAction::~PrimaryGeneratorAction()
 {
-  //delete particleGun; 
+  //delete fparticleGun; 
   
   delete fParticleGun;
   delete fGunMessenger;
@@ -37,6 +44,8 @@ void PrimaryGeneratorAction::SetDefaultKinematic(G4int front)
 
    //G4ParticleDefinition* ion 
    //        = G4IonTable::GetIonTable()->GetIon(11, 13, 0.);
+
+  
 
   fParticleGun->SetParticleDefinition(ion);
   fParticleGun->SetParticleCharge(2.0);
@@ -51,5 +60,5 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
   fParticleGun->GeneratePrimaryVertex(anEvent); 
 
-  //particleGun -> GeneratePrimaryVertex(anEvent);
+  //fparticleGun -> GeneratePrimaryVertex(anEvent);
 }

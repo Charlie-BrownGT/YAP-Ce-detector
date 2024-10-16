@@ -5,6 +5,8 @@
 #include "G4ParticleGun.hh"
 #include "globals.hh"
 
+
+
 class G4Event;
 class DetectorConstruction;
 class PrimaryGeneratorMessenger;
@@ -28,6 +30,6 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     G4double                   fRndmBeam     = 0.;
     PrimaryGeneratorMessenger* fGunMessenger = nullptr;
 
-    //G4GeneralParticleSource* particleGun;
+    //G4GeneralParticleSource* fparticleGun;
 };
 #endif
